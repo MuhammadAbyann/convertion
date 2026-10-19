@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: konversiku
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: MAX_FILE_MB
+        value: "20"
+      - key: MAX_CONCURRENT
+        value: "1"
+      - key: RATE_LIMIT_PER_MIN
+        value: "10"
